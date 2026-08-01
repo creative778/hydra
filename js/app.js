@@ -244,3 +244,116 @@ card.style.transition=
 
 
 });
+
+// ===============================
+// Mobile Menu
+// ===============================
+
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+
+if(menuBtn){
+
+
+menuBtn.onclick=()=>{
+
+
+navLinks.classList.toggle("active");
+
+
+};
+
+
+}
+
+
+
+
+// ===============================
+// Dark Light Mode
+// ===============================
+
+
+const themeBtn =
+document.getElementById("themeToggle");
+
+
+
+if(themeBtn){
+
+
+
+let theme =
+localStorage.getItem("theme");
+
+
+
+if(theme==="light"){
+
+
+document.body.classList.add(
+"light-mode"
+);
+
+
+themeBtn.innerHTML="☀️";
+
+
+}
+
+
+
+
+themeBtn.onclick=()=>{
+
+
+document.body.classList.toggle(
+"light-mode"
+);
+
+
+
+if(document.body.classList.contains(
+"light-mode"
+)){
+
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+
+themeBtn.innerHTML="☀️";
+
+
+}
+
+else{
+
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+
+themeBtn.innerHTML="🌙";
+
+
+}
+
+
+
+};
+
+
+
+}
